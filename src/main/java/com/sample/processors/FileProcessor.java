@@ -11,5 +11,4 @@ public class FileProcessor implements MessageProcessor {
 		System.out.println("In file processor =====>" + ((TextMessage)message).getText());
 		return true;
 	}
-
 }

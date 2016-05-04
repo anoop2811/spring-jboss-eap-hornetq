@@ -5,4 +5,8 @@ import javax.jms.Message;
 
 public interface MessageProcessor {
 	public boolean process(Message message) throws JMSException;
+
+	default String getName() {
+		return this.getClass().getName();
+	}
 }

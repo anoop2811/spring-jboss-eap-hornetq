@@ -11,5 +11,4 @@ public class SysoutProcessor implements MessageProcessor {
 		System.out.println("In sysout processor +++++>" + ((TextMessage)message).getText());
 		return true;
 	}
-
 }
