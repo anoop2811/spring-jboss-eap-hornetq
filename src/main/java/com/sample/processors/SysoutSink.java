@@ -4,7 +4,7 @@ import javax.jms.JMSException;
 import javax.jms.Message;
 import javax.jms.TextMessage;
 
-public class SysoutProcessor implements MessageProcessor {
+public class SysoutSink implements MessageSink {
 
 	@Override
 	public boolean process(Message message) throws JMSException {

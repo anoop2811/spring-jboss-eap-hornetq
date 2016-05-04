@@ -12,20 +12,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jms.annotation.JmsListener;
 import org.springframework.stereotype.Component;
 
-import com.sample.processors.MessageProcessor;
+import com.sample.processors.MessageSink;
 
 @Component
 public class SampleJmsListener {
 
 	@Resource
-	public List<MessageProcessor> messageProcessors;
+	public List<MessageSink> messageProcessors;
 	
 
 	Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	@JmsListener(containerFactory = "myContainerFactory", destination = "TestQueue")
 	public void processOrder(Message message) {
-		for (MessageProcessor messageProcessor : messageProcessors) {
+		for (MessageSink messageProcessor : messageProcessors) {
 			try {
 				logger.debug("Going to process message in [{}]",messageProcessor.getName());
 				messageProcessor.process(message);
