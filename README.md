@@ -15,3 +15,4 @@ If you need to add a new MessageSink, say eg: AWSSink, then just create a class 
 
 The [Sender](https://github.com/anoop2811/spring-jboss-eap-hornetq/blob/master/src/main/java/com/sample/sender/Sender.java) sends timed messages, currently every 1 second to the `TestQueue`
 
+Please makse sure that there is no security associated with the destination for sending and/or receiving. If there are any security matchers, add appropriate username/password to the JNDI context
